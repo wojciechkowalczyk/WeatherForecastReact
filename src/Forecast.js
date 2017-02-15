@@ -7,7 +7,7 @@ class Forecast extends React.Component {
         super(props);
 
         this.state = {data: ''};
-        let apiKey = '80e6daa3a673115878aba8e33628330e';
+        let apiKey = '2bbc0760023b04a468c32abf8773fa75';
         this.beforeCityQueryPart = 'http://api.openweathermap.org/data/2.5/forecast/daily?q=';
         this.afterCityQueryPart = '&mode=json&units=metric&cnt=7&apikey=' + apiKey;
     }
