@@ -38,7 +38,7 @@ class Forecast extends Component {
     }
 }
 
-class App extends Component {
+class WeatherForecast extends Component {
     constructor() {
         super();
         this.city = 'Oslo';
@@ -48,6 +48,16 @@ class App extends Component {
         return (
                 <div>
                     <Forecast city={this.city} />
+                </div>
+                );
+    }
+}
+
+class App extends Component {
+    render() {
+        return (
+                <div>
+                    <WeatherForecast />
                 </div>
                 );
     }
