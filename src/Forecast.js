@@ -3,8 +3,8 @@ import './App.css';
 import axios from 'axios';
 
 class Forecast extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {data: ''};
         let apiKey = '80e6daa3a673115878aba8e33628330e';
@@ -12,7 +12,7 @@ class Forecast extends React.Component {
         this.afterCityQueryPart = '&mode=json&units=metric&cnt=7&apikey=' + apiKey;
     }
 
-    componentWillMount() {
+    apiCall() {
         let self = this;
         this.query = this.beforeCityQueryPart + this.props.city + this.afterCityQueryPart;
         axios.get(this.query)
@@ -21,11 +21,18 @@ class Forecast extends React.Component {
                     //let result = JSON.parse(JSON.stringify(response.data));
                     let result = JSON.stringify(response.data, null, 4);
 
-                    alert(result);
+                    //alert(result);
                     console.log(result);
                     self.setState({data: result});
-                })
+                });
+    }
 
+    componentWillMount() {
+        this.apiCall();
+    }
+
+    componentWillUpdate() {
+        this.apiCall();
     }
 
     render() {
