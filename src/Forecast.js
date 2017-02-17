@@ -12,9 +12,9 @@ class Forecast extends React.Component {
         this.afterCityQueryPart = '&mode=json&units=metric&cnt=7&apikey=' + apiKey;
     }
 
-    apiCall() {
+    apiCall(passedProps) {
         let self = this;
-        this.query = this.beforeCityQueryPart + this.props.city + this.afterCityQueryPart;
+        this.query = this.beforeCityQueryPart + passedProps.city + this.afterCityQueryPart;
         axios.get(this.query)
                 .then(function (response) {
                     //let result = response.data;
@@ -28,11 +28,13 @@ class Forecast extends React.Component {
     }
 
     componentWillMount() {
-        this.apiCall();
+        this.apiCall(this.props);
     }
 
-    componentWillUpdate() {
-        this.apiCall();
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.city !== this.props.city) {
+            this.apiCall(nextProps);
+        }
     }
 
     render() {
