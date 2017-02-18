@@ -11,11 +11,8 @@ class ForecastService {
         this.query = this.beforeCityQueryPart + passedProps.city + this.afterCityQueryPart;
         axios.get(this.query)
                 .then(function (response) {
-                    //let result = response.data;
-                    //let result = JSON.parse(JSON.stringify(response.data));
                     let result = JSON.stringify(response.data, null, 4);
 
-                    //alert(result);
                     console.log(result);
                     component.setState({forecastData: result});
                 });
