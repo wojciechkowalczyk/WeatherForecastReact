@@ -18,7 +18,6 @@ class CityForm extends React.Component {
     }
 
     handleSubmit(event) {
-        alert(this.city.value);
         this.props.onSubmit(
                 this.city.value
                 );
