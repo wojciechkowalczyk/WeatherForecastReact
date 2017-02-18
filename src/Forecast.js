@@ -1,30 +1,17 @@
 import React from 'react';
 import './App.css';
-import axios from 'axios';
+import ForecastService from './ForecastService';
 
 class Forecast extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {data: ''};
-        let apiKey = '2bbc0760023b04a468c32abf8773fa75';
-        this.beforeCityQueryPart = 'http://api.openweathermap.org/data/2.5/forecast/daily?q=';
-        this.afterCityQueryPart = '&mode=json&units=metric&cnt=7&apikey=' + apiKey;
+        this.state = {forecastData: ''};
+        this.forecastService = new ForecastService();
     }
 
     apiCall(passedProps) {
-        let self = this;
-        this.query = this.beforeCityQueryPart + passedProps.city + this.afterCityQueryPart;
-        axios.get(this.query)
-                .then(function (response) {
-                    //let result = response.data;
-                    //let result = JSON.parse(JSON.stringify(response.data));
-                    let result = JSON.stringify(response.data, null, 4);
-
-                    //alert(result);
-                    console.log(result);
-                    self.setState({data: result});
-                });
+        this.forecastService.apiCall(this, passedProps);
     }
 
     componentWillMount() {
@@ -38,10 +25,9 @@ class Forecast extends React.Component {
     }
 
     render() {
-        let data = this.state.data;
         return (
                 <div>
-                    <pre>{data}</pre>
+                    <pre>{this.state.forecastData}</pre>
                 </div>
                 );
     }
