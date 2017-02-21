@@ -1,5 +1,5 @@
 import React from 'react';
-import './MapPicker.css';
+import './App.css';
 
 let google = window.google;
 
@@ -11,13 +11,9 @@ export default class GMap extends React.Component {
     }
 
     render() {
-        return <div className="GMap">
-            <div className='UpdatedText'>
-                <p>Current Zoom: { this.state.zoom }</p>
-            </div>
-            <div className='GMap-canvas' ref="mapCanvas">
-            </div>
-        </div>
+        return (
+                <div className='map_picker' ref="mapCanvas"></div>
+                );
     }
 
     componentDidMount() {

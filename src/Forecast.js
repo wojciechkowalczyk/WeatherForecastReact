@@ -25,11 +25,12 @@ class Forecast extends React.Component {
     }
 
     render() {
-        return (
+        /*return (
                 <div>
                     <pre>{this.state.forecastData}</pre>
                 </div>
-                );
+                );*/
+        return null;
     }
 }
 

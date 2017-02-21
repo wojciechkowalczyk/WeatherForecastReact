@@ -26,19 +26,21 @@ class CityForm extends React.Component {
 
     render() {
         return (
-                <form onSubmit={this.handleSubmit}>
-                    <input
-                        type="text"
-                        placeholder="Enter city ..."
-                        value={this.state.city}
-                        ref={(input) => this.city = input}
-                        onChange={this.handleChange}
-                        autoFocus="true"
-                        />
-                    <input 
-                        type="submit" value="City forecast"
-                        />
-                </form>
+                <div className="city_form">
+                    <form onSubmit={this.handleSubmit}>
+                        <input
+                            type="text"
+                            placeholder="Enter city ..."
+                            value={this.state.city}
+                            ref={(input) => this.city = input}
+                            onChange={this.handleChange}
+                            autoFocus="true"
+                            />
+                        <input 
+                            type="submit" value="City forecast"
+                            />
+                    </form>
+                </div>
                 );
     }
 }
