@@ -3,7 +3,7 @@ import './App.css';
 
 let google = window.google;
 
-export default class GMap extends React.Component {
+export default class MapPicker extends React.Component {
     state = {zoom: 10};
 
     static propTypes() {
