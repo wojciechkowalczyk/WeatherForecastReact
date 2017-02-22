@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import ForecastService from './ForecastService';
+import Drawer from './Drawer';
 
 class Forecast extends React.Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class Forecast extends React.Component {
         if (nextProps.city !== this.props.city) {
             this.apiCall(nextProps);
         }
-        
+
         if ((nextProps.lat !== this.props.lat) || (nextProps.lon !== this.props.lon)) {
             this.forecastService.latLonCall(this, nextProps);
         }
@@ -30,12 +31,9 @@ class Forecast extends React.Component {
 
     render() {
         console.log('render() log \n\n' + this.state.forecastData);
-        /*return (
-                <div>
-                    <pre>{this.state.forecastData}</pre>
-                </div>
-                );*/
-        return null;
+        return (
+                <Drawer data={this.state.forecastData} />
+                );
     }
 }
 
