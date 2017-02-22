@@ -9,6 +9,8 @@ class Forecast extends React.Component {
 
         this.state = {forecastData: ''};
         this.forecastService = new ForecastService();
+
+        this.onDrawerClick = this.onDrawerClick.bind(this);
     }
 
     apiCall(passedProps) {
@@ -27,12 +29,18 @@ class Forecast extends React.Component {
         if ((nextProps.lat !== this.props.lat) || (nextProps.lon !== this.props.lon)) {
             this.forecastService.latLonCall(this, nextProps);
         }
+
+        this.setState({openDrawer: true});
+    }
+
+    onDrawerClick(event) {
+        this.setState({openDrawer: false});
     }
 
     render() {
         console.log('render() log \n\n' + this.state.forecastData);
         return (
-                <Drawer data={this.state.forecastData} />
+                <Drawer onClick={this.onDrawerClick} open={this.state.openDrawer} data={this.state.forecastData} />
                 );
     }
 }

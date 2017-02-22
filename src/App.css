@@ -14,8 +14,6 @@
 } 
 
 .drawer {
-    height: 50%;
-    /*height: 0;*/
     width: 100%;
     position: absolute;
     z-index: 10007;
@@ -25,6 +23,14 @@
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 0px;
+}
+
+.drawer_open {
+    height: 100%;
+}
+
+.drawer_closed {
+    height: 0;
 }
 
 .drawer_title {
