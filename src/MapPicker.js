@@ -20,11 +20,11 @@ export default class MapPicker extends React.Component {
         this.map = this.createMap()
         this.marker = this.createMarker()
 
-        google.maps.event.addListener(this.map, 'zoom_changed', () => this.handleZoomChange())
+        google.maps.event.addListener(this.map, 'click', (event) => this.handleClick(event))
     }
 
     componentDidUnMount() {
-        google.maps.event.clearListeners(this.map, 'zoom_changed')
+        google.maps.event.clearListeners(this.map, 'click')
     }
 
     createMap() {
@@ -49,9 +49,12 @@ export default class MapPicker extends React.Component {
         })
     }
 
-    handleZoomChange() {
+    handleClick(event) {
         this.setState({
-            zoom: this.map.getZoom()
+            lat: event.latLng.lat(),
+            lon: event.latLng.lng(),
         })
+
+        console.log('MapPicker lat lon \n' + this.state.lat + '\n' + this.state.lon);
     }
 }
