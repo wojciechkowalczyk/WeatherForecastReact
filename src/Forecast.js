@@ -22,6 +22,10 @@ class Forecast extends React.Component {
         if (nextProps.city !== this.props.city) {
             this.apiCall(nextProps);
         }
+        
+        if ((nextProps.lat !== this.props.lat) || (nextProps.lon !== this.props.lon)) {
+            this.forecastService.latLonCall(this, nextProps);
+        }
     }
 
     render() {
