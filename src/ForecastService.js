@@ -13,7 +13,7 @@ class ForecastService {
                 .then(function (response) {
                     let result = JSON.stringify(response.data, null, 4);
 
-                    console.log(result);
+                    //console.log('ForecastService log \n\n' + result);
                     component.setState({forecastData: result});
                 });
     }

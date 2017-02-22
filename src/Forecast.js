@@ -25,6 +25,7 @@ class Forecast extends React.Component {
     }
 
     render() {
+        console.log('render() log \n\n' + this.state.forecastData);
         /*return (
                 <div>
                     <pre>{this.state.forecastData}</pre>
