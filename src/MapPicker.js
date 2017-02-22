@@ -17,18 +17,12 @@ export default class MapPicker extends React.Component {
     }
 
     componentDidMount() {
-        // create the map, marker and infoWindow after the component has
-        // been rendered because we need to manipulate the DOM for Google =(
         this.map = this.createMap()
         this.marker = this.createMarker()
-        this.infoWindow = this.createInfoWindow()
 
-        // have to define google maps event listeners here too
-        // because we can't add listeners on the map until its created
         google.maps.event.addListener(this.map, 'zoom_changed', () => this.handleZoomChange())
     }
 
-    // clean up event listeners when component unmounts
     componentDidUnMount() {
         google.maps.event.clearListeners(this.map, 'zoom_changed')
     }
@@ -52,15 +46,6 @@ export default class MapPicker extends React.Component {
         return new google.maps.Marker({
             position: this.mapCenter(),
             map: this.map
-        })
-    }
-
-    createInfoWindow() {
-        let contentString = "<div class='InfoWindow'>I'm a Window that contains Info Yay</div>"
-        return new google.maps.InfoWindow({
-            map: this.map,
-            anchor: this.marker,
-            content: contentString
         })
     }
 
