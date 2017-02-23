@@ -17,9 +17,7 @@ export default class Drawer extends React.Component {
         return (
                 <div onClick={this.handleClick} className={"drawer " + class_name}>
                     <div className="drawer_title"></div>
-                    <div>
-                        <pre>{this.props.data}</pre>
-                    </div>
+                    <div>{this.props.children}</div>
                 </div>
                 );
     }

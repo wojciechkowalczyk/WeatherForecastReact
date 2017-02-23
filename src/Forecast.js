@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import ForecastService from './ForecastService';
 import Drawer from './Drawer';
+import ForecastCharts from './ForecastCharts';
 
 class Forecast extends React.Component {
     constructor(props) {
@@ -40,7 +41,9 @@ class Forecast extends React.Component {
     render() {
         console.log('render() log \n\n' + this.state.forecastData);
         return (
-                <Drawer onClick={this.onDrawerClick} open={this.state.openDrawer} data={this.state.forecastData} />
+                <Drawer onClick={this.onDrawerClick} open={this.state.openDrawer} >
+                    <ForecastCharts data={this.state.forecastData} />
+                </Drawer>
                 );
     }
 }
