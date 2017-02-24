@@ -8,7 +8,7 @@ class Forecast extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {forecastData: ''};
+        this.state = {forecastData: {city:{name:''}}};
         this.forecastService = new ForecastService();
 
         this.onDrawerClick = this.onDrawerClick.bind(this);
@@ -41,7 +41,7 @@ class Forecast extends React.Component {
     render() {
         console.log('render() log \n\n' + JSON.stringify(this.state.forecastData, null, 4));
         return (
-                <Drawer onClick={this.onDrawerClick} open={this.state.openDrawer} >
+                <Drawer title={this.state.forecastData.city.name + ' forecast'} onClick={this.onDrawerClick} open={this.state.openDrawer} >
                     <ForecastCharts data={this.state.forecastData} />
                 </Drawer>
                 );
