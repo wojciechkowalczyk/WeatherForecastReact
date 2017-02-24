@@ -12,10 +12,10 @@ export default class ForecastCharts extends React.Component {
                     <div id="temperature_chart" className="forecast_chart"></div>
                     <div id="percentage_quantities_chart" className="forecast_chart"></div>
                     <div id="pressure_chart" className="forecast_chart"></div>
-                    
+                
                     <div className="forecast_charts">
                         <div>
-                            <pre>{this.props.data}</pre>
+                            <pre>{JSON.stringify(this.props.data, null, 4)}</pre>
                         </div>
                     </div>
                 </div>

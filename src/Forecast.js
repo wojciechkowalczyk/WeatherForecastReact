@@ -39,7 +39,7 @@ class Forecast extends React.Component {
     }
 
     render() {
-        console.log('render() log \n\n' + this.state.forecastData);
+        console.log('render() log \n\n' + JSON.stringify(this.state.forecastData, null, 4));
         return (
                 <Drawer onClick={this.onDrawerClick} open={this.state.openDrawer} >
                     <ForecastCharts data={this.state.forecastData} />
