@@ -6,6 +6,14 @@ export default class ForecastCharts extends React.Component {
         super(props);
     }
 
+    componentWillUpdate(nextProps, nextState) {
+        if (typeof nextProps.data === "object") {
+            if (nextProps.data !== this.props.data) {
+                alert(nextProps.data.city.name);
+            }
+        }
+    }
+
     render() {
         return (
                 <div>
