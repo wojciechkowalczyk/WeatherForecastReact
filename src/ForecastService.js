@@ -12,8 +12,8 @@ export default class ForecastService {
         this.afterLonQueryPart = '&mode=json&units=metric&cnt=7&apikey=' + apiKey;
     }
 
-    apiCall(component, props) {
-        this.query = this.beforeCityQueryPart + props.city + this.afterCityQueryPart;
+    apiCall(component, passedProps) {
+        this.query = this.beforeCityQueryPart + passedProps.city + this.afterCityQueryPart;
         axios.get(this.query)
                 .then(function (response) {
                     //let result = JSON.stringify(response.data, null, 4);
@@ -24,8 +24,8 @@ export default class ForecastService {
                 });
     }
 
-    latLonCall(component, props) {
-        this.latLonQuery = this.beforeLatQueryPart + props.lat + this.innerQueryPart + props.lon + this.afterLonQueryPart;
+    latLonCall(component, passedProps) {
+        this.latLonQuery = this.beforeLatQueryPart + passedProps.lat + this.innerQueryPart + passedProps.lon + this.afterLonQueryPart;
         axios.get(this.latLonQuery)
                 .then(function (response) {
                     //let result = JSON.stringify(response.data, null, 4);
