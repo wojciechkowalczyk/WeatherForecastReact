@@ -13,11 +13,11 @@ class WeatherForecast extends React.Component {
             lon: 19.9717272
         };
 
-        this.handleUserInput = this.handleUserInput.bind(this);
+        this.handleCity = this.handleCity.bind(this);
         this.handleLatLon = this.handleLatLon.bind(this);
     }
 
-    handleUserInput(city) {
+    handleCity(city) {
         this.setState({
             city: city
         });
@@ -36,7 +36,7 @@ class WeatherForecast extends React.Component {
                     <MapPicker onClick={this.handleLatLon} lat={this.state.lat} lon={this.state.lon} />
                     <CityForm 
                         city={this.state.city}
-                        onSubmit={this.handleUserInput}            
+                        onSubmit={this.handleCity}            
                         />
                     <Forecast lat={this.state.lat} lon={this.state.lon} city={this.state.city} />
                 </div>
