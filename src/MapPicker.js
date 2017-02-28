@@ -4,18 +4,6 @@ import './App.css';
 let google = window.google;
 
 export default class MapPicker extends React.Component {
-    state = {zoom: 10};
-
-    static propTypes() {
-        initialCenter: React.PropTypes.objectOf(React.PropTypes.number).isRequired
-    }
-
-    render() {
-        return (
-                <div className='map_picker' ref="mapCanvas"></div>
-                );
-    }
-
     componentDidMount() {
         this.map = this.createMap()
         this.marker = this.createMarker()
@@ -29,7 +17,7 @@ export default class MapPicker extends React.Component {
 
     createMap() {
         let mapOptions = {
-            zoom: this.state.zoom,
+            zoom: 10,
             center: this.mapCenter()
         }
         return new google.maps.Map(this.refs.mapCanvas, mapOptions)
@@ -60,5 +48,11 @@ export default class MapPicker extends React.Component {
         this.props.onClick(this.state.lat, this.state.lon);
 
         console.log('MapPicker lat lon \n' + this.state.lat + '\n' + this.state.lon);
+    }
+    
+    render() {
+        return (
+                <div className='map_picker' ref="mapCanvas"></div>
+                );
     }
 }
