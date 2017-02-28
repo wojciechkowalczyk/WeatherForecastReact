@@ -13,7 +13,8 @@ class Forecast extends React.Component {
                 city:{
                     name:''
                 }
-            }
+            },
+            openDrawer: false
         };
         this.forecastService = new ForecastService();
 
