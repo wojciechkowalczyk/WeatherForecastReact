@@ -25,8 +25,8 @@ export default class MapPicker extends React.Component {
 
     mapCenter() {
         return new google.maps.LatLng(
-                this.props.initialCenter.lat,
-                this.props.initialCenter.lng
+                this.props.lat,
+                this.props.lon
                 )
     }
 
