@@ -4,7 +4,7 @@ import ForecastService from './ForecastService';
 import Drawer from './Drawer';
 import ForecastCharts from './ForecastCharts';
 
-class Forecast extends React.Component {
+export default class Forecast extends React.Component {
     constructor(props) {
         super(props);
 
@@ -54,5 +54,3 @@ class Forecast extends React.Component {
                 );
     }
 }
-
-export default Forecast;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-class CityForm extends React.Component {
+export default class CityForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -44,5 +44,3 @@ class CityForm extends React.Component {
                 );
     }
 }
-
-export default CityForm;

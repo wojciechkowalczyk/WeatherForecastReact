@@ -4,7 +4,7 @@ import Forecast from './Forecast';
 import CityForm from './CityForm';
 import MapPicker from './MapPicker';
 
-class WeatherForecast extends React.Component {
+export default class WeatherForecast extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -43,5 +43,3 @@ class WeatherForecast extends React.Component {
                 );
     }
 }
-
-export default WeatherForecast;

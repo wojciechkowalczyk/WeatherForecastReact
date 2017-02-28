@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class ForecastService {
+export default class ForecastService {
     constructor() {
         let apiKey = '2bbc0760023b04a468c32abf8773fa75';
 
@@ -36,5 +36,3 @@ class ForecastService {
                 });
     }
 }
-
-export default ForecastService;
