@@ -4,6 +4,14 @@ import './App.css';
 let google = window.google;
 
 export default class MapPicker extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            lat: this.props.lat,
+            lon: this.props.lon
+        }
+    }
+
     componentDidMount() {
         this.map = this.createMap()
         this.marker = this.createMarker()
@@ -25,8 +33,8 @@ export default class MapPicker extends React.Component {
 
     mapCenter() {
         return new google.maps.LatLng(
-                this.props.lat,
-                this.props.lon
+                this.state.lat,
+                this.state.lon
                 )
     }
 
@@ -49,7 +57,7 @@ export default class MapPicker extends React.Component {
 
         console.log('MapPicker lat lon \n' + this.state.lat + '\n' + this.state.lon);
     }
-    
+
     render() {
         return (
                 <div className='map_picker' ref="mapCanvas"></div>
