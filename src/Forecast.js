@@ -8,7 +8,13 @@ class Forecast extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {forecastData: {city:{name:''}}};
+        this.state = {
+            forecastData: {
+                city:{
+                    name:''
+                }
+            }
+        };
         this.forecastService = new ForecastService();
 
         this.onDrawerClick = this.onDrawerClick.bind(this);
