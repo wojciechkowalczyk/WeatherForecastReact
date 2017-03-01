@@ -16,10 +16,7 @@ export default class ForecastService {
         this.query = this.beforeCityQueryPart + passedProps.city + this.afterCityQueryPart;
         axios.get(this.query)
                 .then(function (response) {
-                    //let result = JSON.stringify(response.data, null, 4);
                     let result = response.data;
-
-                    //console.log('ForecastService log \n\n' + result);
                     component.setState({forecastData: result});
                 });
     }
@@ -28,10 +25,7 @@ export default class ForecastService {
         this.latLonQuery = this.beforeLatQueryPart + passedProps.lat + this.innerQueryPart + passedProps.lon + this.afterLonQueryPart;
         axios.get(this.latLonQuery)
                 .then(function (response) {
-                    //let result = JSON.stringify(response.data, null, 4);
                     let result = response.data;
-
-                    //console.log('ForecastService lat lon log \n\n' + result);
                     component.setState({forecastData: result});
                 });
     }
