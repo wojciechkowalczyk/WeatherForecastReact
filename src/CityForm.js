@@ -37,7 +37,8 @@ export default class CityForm extends React.Component {
                             autoFocus="true"
                             />
                         <input 
-                            type="submit" value="City forecast"
+                            type="submit" 
+                            value="City forecast"
                             />
                     </form>
                 </div>

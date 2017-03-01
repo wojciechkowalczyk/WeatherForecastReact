@@ -10,8 +10,8 @@ export default class Forecast extends React.Component {
 
         this.state = {
             forecastData: {
-                city:{
-                    name:''
+                city: {
+                    name: ''
                 }
             },
             openDrawer: false
@@ -48,8 +48,14 @@ export default class Forecast extends React.Component {
     render() {
         console.log('render() log \n\n' + JSON.stringify(this.state.forecastData, null, 4));
         return (
-                <Drawer title={this.state.forecastData.city.name + ' forecast'} onClick={this.onDrawerClick} open={this.state.openDrawer} >
-                    <ForecastCharts data={this.state.forecastData} />
+                <Drawer 
+                    title={this.state.forecastData.city.name + ' forecast'} 
+                    open={this.state.openDrawer}
+                    onClick={this.onDrawerClick}
+                    >
+                    <ForecastCharts 
+                        data={this.state.forecastData} 
+                        />
                 </Drawer>
                 );
     }

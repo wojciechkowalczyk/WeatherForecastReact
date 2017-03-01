@@ -60,7 +60,9 @@ export default class MapPicker extends React.Component {
 
     render() {
         return (
-                <div className='map_picker' ref="mapCanvas"></div>
+                <div 
+                    className='map_picker' 
+                    ref="mapCanvas"></div>
                 );
     }
 }

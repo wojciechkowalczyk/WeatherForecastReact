@@ -9,7 +9,7 @@ export default class WeatherForecast extends React.Component {
         super(props);
         this.state = {
             city: '',
-            lat: 50.1056957, 
+            lat: 50.1056957,
             lon: 19.9717272
         };
 
@@ -22,7 +22,7 @@ export default class WeatherForecast extends React.Component {
             city: city
         });
     }
-    
+
     handleLatLon(lat, lon) {
         this.setState({
             lat: lat,
@@ -33,12 +33,20 @@ export default class WeatherForecast extends React.Component {
     render() {
         return (
                 <div>
-                    <MapPicker onClick={this.handleLatLon} lat={this.state.lat} lon={this.state.lon} />
+                    <MapPicker 
+                        lat={this.state.lat} 
+                        lon={this.state.lon}
+                        onClick={this.handleLatLon}
+                        />
                     <CityForm 
                         city={this.state.city}
-                        onSubmit={this.handleCity}            
+                        onSubmit={this.handleCity}         
                         />
-                    <Forecast lat={this.state.lat} lon={this.state.lon} city={this.state.city} />
+                    <Forecast 
+                        lat={this.state.lat} 
+                        lon={this.state.lon} 
+                        city={this.state.city}
+                        />
                 </div>
                 );
     }
