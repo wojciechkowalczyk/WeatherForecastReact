@@ -10,23 +10,26 @@ export default class WeatherForecast extends React.Component {
         this.state = {
             city: '',
             lat: 50.1056957,
-            lon: 19.9717272
+            lon: 19.9717272,
+            apiCall: false
         };
 
         this.handleCity = this.handleCity.bind(this);
         this.handleLatLon = this.handleLatLon.bind(this);
     }
 
-    handleCity(city) {
+    handleCity(city, apiCall) {
         this.setState({
-            city: city
+            city: city,
+            apiCall: apiCall
         });
     }
 
-    handleLatLon(lat, lon) {
+    handleLatLon(lat, lon, apiCall) {
         this.setState({
             lat: lat,
-            lon: lon
+            lon: lon,
+            apiCall: apiCall
         });
     }
 
@@ -46,6 +49,7 @@ export default class WeatherForecast extends React.Component {
                         lat={this.state.lat} 
                         lon={this.state.lon} 
                         city={this.state.city}
+                        apiCall={this.state.apiCall}
                         />
                 </div>
                 );

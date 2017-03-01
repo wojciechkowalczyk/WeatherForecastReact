@@ -19,7 +19,8 @@ export default class CityForm extends React.Component {
 
     handleSubmit(event) {
         this.props.onSubmit(
-                this.city.value
+                this.city.value,
+                true
                 );
         event.preventDefault();
     }
