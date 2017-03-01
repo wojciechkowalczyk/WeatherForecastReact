@@ -13,11 +13,12 @@ export default class ForecastService {
     }
 
     apiCall(component, passedProps) {
-        this.query =
+        this.cityQuery =
                 this.beforeCityQueryPart
                 + passedProps.city
                 + this.afterCityQueryPart;
-        axios.get(this.query)
+
+        axios.get(this.cityQuery)
                 .then(function (response) {
                     let result = response.data;
                     component.setState({forecastData: result});
@@ -31,6 +32,7 @@ export default class ForecastService {
                 + this.innerQueryPart
                 + passedProps.lon
                 + this.afterLonQueryPart;
+
         axios.get(this.latLonQuery)
                 .then(function (response) {
                     let result = response.data;
