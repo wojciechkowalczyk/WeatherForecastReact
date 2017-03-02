@@ -57,6 +57,17 @@ export default class MapPicker extends React.Component {
 
         console.log('MapPicker lat lon \n' + this.state.lat + '\n' + this.state.lon);
     }
+    
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            lat: nextProps.lat,
+            lon: nextProps.lon
+        });
+        
+        this.marker.setPosition(new google.maps.LatLng(this.state.lat, this.state.lon));
+        this.map.setCenter(new google.maps.LatLng(this.state.lat, this.state.lon));
+        console.log('MapPicker lat lon \n' + this.state.lat + '\n' + this.state.lon);
+    }
 
     render() {
         return (

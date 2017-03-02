@@ -24,6 +24,12 @@ export default class CityForm extends React.Component {
                 );
         event.preventDefault();
     }
+    
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            city: nextProps.city
+        });
+    }
 
     render() {
         return (

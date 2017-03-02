@@ -43,6 +43,10 @@ export default class Forecast extends React.Component {
         }
     }
 
+    componentWillUpdate(nextProps, nextState) {
+        this.props.onUpdate(nextState);
+    }
+
     onDrawerClick(event) {
         this.setState({openDrawer: false});
     }
