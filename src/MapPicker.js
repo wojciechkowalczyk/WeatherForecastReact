@@ -55,18 +55,23 @@ export default class MapPicker extends React.Component {
 
         this.props.onClick(this.state.lat, this.state.lon, true);
 
-        console.log('MapPicker lat lon \n' + this.state.lat + '\n' + this.state.lon);
+        console.log('MapPicker -> handleClick() lat lon \n' + this.state.lat + '\n' + this.state.lon);
+        //alert('MapPicker -> handleClick() lat lon \n' + this.state.lat + '\n' + this.state.lon);
     }
-    
+
     componentWillReceiveProps(nextProps) {
-        this.setState({
-            lat: nextProps.lat,
-            lon: nextProps.lon
-        });
-        
-        this.marker.setPosition(new google.maps.LatLng(this.state.lat, this.state.lon));
-        this.map.setCenter(new google.maps.LatLng(this.state.lat, this.state.lon));
-        console.log('MapPicker lat lon \n' + this.state.lat + '\n' + this.state.lon);
+        if (nextProps.lat !== this.state.lat
+                || nextProps.lon !== this.state.lon) {
+            this.setState({
+                lat: nextProps.lat,
+                lon: nextProps.lon
+            });
+
+            this.marker.setPosition(new google.maps.LatLng(this.state.lat, this.state.lon));
+            this.map.setCenter(new google.maps.LatLng(this.state.lat, this.state.lon));
+            //alert('MapPicker -> componentWillReceiveProps() lat lon \n' + this.state.lat + '\n' + this.state.lon);
+            console.log('MapPicker -> componentWillReceiveProps() lat lon \n' + this.state.lat + '\n' + this.state.lon);
+        }
     }
 
     render() {

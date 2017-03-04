@@ -24,11 +24,17 @@ export default class CityForm extends React.Component {
                 );
         event.preventDefault();
     }
-    
+
     componentWillReceiveProps(nextProps) {
-        this.setState({
-            city: nextProps.city
-        });
+        if (nextProps.city !== this.state.city) {
+            this.setState({
+                city: nextProps.city
+            });
+
+            //alert('CityForm -> componentWillReceiveProps() city \n' + this.state.city);
+            console.log('CityForm -> componentWillReceiveProps() city \n' + this.state.city);
+            console.log('CityForm -> componentWillReceiveProps() next city \n' + nextProps.city);
+        }
     }
 
     render() {

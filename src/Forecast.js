@@ -52,7 +52,7 @@ export default class Forecast extends React.Component {
     }
 
     render() {
-        console.log('render() log \n\n' + JSON.stringify(this.state.forecastData, null, 4));
+        //render() log \n\n' + JSON.stringify(this.state.forecastData, null, 4));
         return (
                 <Drawer 
                     title={this.state.forecastData.city.name + ' forecast'} 
