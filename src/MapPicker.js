@@ -60,8 +60,8 @@ export default class MapPicker extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.lat !== this.state.lat
-                || nextProps.lon !== this.state.lon) {
+        if (nextProps.lat != this.state.lat
+                || nextProps.lon != this.state.lon) {
             this.setState({
                 lat: nextProps.lat,
                 lon: nextProps.lon

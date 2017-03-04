@@ -26,7 +26,7 @@ export default class CityForm extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.city !== this.state.city) {
+        if (nextProps.city != this.state.city) {
             this.setState({
                 city: nextProps.city
             });

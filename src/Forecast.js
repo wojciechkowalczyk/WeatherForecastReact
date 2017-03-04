@@ -31,11 +31,11 @@ export default class Forecast extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.apiCall) {
-            if (nextProps.city !== this.props.city) {
+            if (nextProps.city != this.props.city) {
                 this.apiCall(nextProps);
             }
 
-            if ((nextProps.lat !== this.props.lat) || (nextProps.lon !== this.props.lon)) {
+            if ((nextProps.lat != this.props.lat) || (nextProps.lon != this.props.lon)) {
                 this.forecastService.latLonCall(this, nextProps);
             }
 
