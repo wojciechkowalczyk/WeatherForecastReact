@@ -25,18 +25,14 @@ export default class Forecast extends React.Component {
         this.onDrawerClick = this.onDrawerClick.bind(this);
     }
 
-    apiCall(passedProps) {
-        this.forecastService.apiCall(this, passedProps);
-    }
-
     componentWillMount() {
-        this.apiCall(this.props);
+        this.forecastService.cityCall(this, this.props);
     }
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.apiCall) {
             if (nextProps.city != this.props.city) {
-                this.apiCall(nextProps);
+                this.forecastService.cityCall(this, nextProps);
             }
 
             if ((nextProps.lat != this.props.lat) || (nextProps.lon != this.props.lon)) {

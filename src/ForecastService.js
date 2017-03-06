@@ -12,7 +12,7 @@ export default class ForecastService {
         this.afterLonQueryPart = '&mode=json&units=metric&cnt=7&apikey=' + apiKey;
     }
 
-    apiCall(component, passedProps) {
+    cityCall(component, passedProps) {
         this.cityQuery =
                 this.beforeCityQueryPart
                 + passedProps.city
