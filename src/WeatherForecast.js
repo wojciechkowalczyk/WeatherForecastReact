@@ -47,9 +47,9 @@ export default class WeatherForecast extends React.Component {
         }
 
         console.log('WeatherForecast -> handleForecastUpdate() \n'
-                + '\t city: ' + this.state.city
-                + '\t lat: ' + this.state.lat
-                + '\t lon: ' + this.state.lon);
+                + '\t state.city: ' + this.state.city
+                + '\t state.lat: ' + this.state.lat
+                + '\t state.lon: ' + this.state.lon);
     }
 
     render() {
