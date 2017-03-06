@@ -72,7 +72,7 @@ export default class MapPicker extends React.Component {
     componentDidUpdate(pastProps, pastState) {
         this.marker.setPosition(new google.maps.LatLng(this.state.lat, this.state.lon));
         this.map.setCenter(new google.maps.LatLng(this.state.lat, this.state.lon));
-        //alert('MapPicker -> componentDidUpdate() \n' + '\t lat: ' + this.state.lat + '\t lon: ' + this.state.lon);
+
         console.log('MapPicker -> componentDidUpdate() \n' + '\t lat: ' + this.state.lat + '\t lon: ' + this.state.lon);
     }
 

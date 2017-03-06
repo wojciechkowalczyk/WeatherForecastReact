@@ -13,7 +13,7 @@ export default class WeatherForecast extends React.Component {
             lon: 19.9717272,
             apiCall: false
         };
-        
+
         this.handleCity = this.handleCity.bind(this);
         this.handleLatLon = this.handleLatLon.bind(this);
         this.handleForecastUpdate = this.handleForecastUpdate.bind(this);
@@ -45,13 +45,10 @@ export default class WeatherForecast extends React.Component {
                 apiCall: false
             });
         }
-        /*alert('WeatherForecast -> handleForecastUpdate() \n'
-                + '\t' + 'city: ' + this.state.city 
-                + '\t' + 'lat: ' + this.state.lat 
-                + '\t' + 'lon: ' + this.state.lon);*/
-         console.log('WeatherForecast -> handleForecastUpdate() \n'
+
+        console.log('WeatherForecast -> handleForecastUpdate() \n'
                 + '\t city: ' + this.state.city
-                + '\t lat: ' + this.state.lat 
+                + '\t lat: ' + this.state.lat
                 + '\t lon: ' + this.state.lon);
     }
 
