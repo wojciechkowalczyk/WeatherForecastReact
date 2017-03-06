@@ -45,8 +45,14 @@ export default class WeatherForecast extends React.Component {
                 apiCall: false
             });
         }
-        //alert('WeatherForecast -> handleforecastUpdate()');
-         console.log('WeatherForecast -> handleforecastUpdate()');
+        /*alert('WeatherForecast -> handleforecastUpdate() \n'
+                + '\t' + 'city: ' + this.state.city 
+                + '\t' + 'lat: ' + this.state.lat 
+                + '\t' + 'lon: ' + this.state.lon);*/
+         console.log('WeatherForecast -> handleforecastUpdate() \n'
+                + '\t city: ' + this.state.city + '\n'
+                + '\t lat: ' + this.state.lat 
+                + '\t lon: ' + this.state.lon);
     }
 
     render() {
