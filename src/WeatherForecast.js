@@ -45,12 +45,12 @@ export default class WeatherForecast extends React.Component {
                 apiCall: false
             });
         }
-        /*alert('WeatherForecast -> handleforecastUpdate() \n'
+        /*alert('WeatherForecast -> handleForecastUpdate() \n'
                 + '\t' + 'city: ' + this.state.city 
                 + '\t' + 'lat: ' + this.state.lat 
                 + '\t' + 'lon: ' + this.state.lon);*/
-         console.log('WeatherForecast -> handleforecastUpdate() \n'
-                + '\t city: ' + this.state.city + '\n'
+         console.log('WeatherForecast -> handleForecastUpdate() \n'
+                + '\t city: ' + this.state.city
                 + '\t lat: ' + this.state.lat 
                 + '\t lon: ' + this.state.lon);
     }

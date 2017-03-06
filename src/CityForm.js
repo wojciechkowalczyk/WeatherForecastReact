@@ -31,9 +31,9 @@ export default class CityForm extends React.Component {
                 city: nextProps.city
             });
 
-            //alert('CityForm -> componentWillReceiveProps() city \n' + this.state.city);
-            console.log('CityForm -> componentWillReceiveProps() city \n' + this.state.city);
-            console.log('CityForm -> componentWillReceiveProps() next city \n' + nextProps.city);
+            //alert('CityForm -> componentWillReceiveProps() \n \t city: ' + this.state.city);
+            console.log('CityForm -> componentWillReceiveProps() \n \t city: ' + this.state.city);
+            console.log('CityForm -> componentWillReceiveProps() \n \t nextProps city: ' + nextProps.city);
         }
     }
 
