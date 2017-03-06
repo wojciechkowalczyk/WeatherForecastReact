@@ -27,6 +27,11 @@ export default class ForecastService {
                 .then(function (response) {
                     let result = response.data;
                     component.setState({forecastData: result});
+
+                    console.log('ForecastService -> cityCall() \n'
+                            + '\t passedProps.city: ' + passedProps.city
+                            + '\t passedProps.lat: ' + passedProps.lat
+                            + '\t passedProps.lon: ' + passedProps.lon);
                 });
     }
 
@@ -47,6 +52,11 @@ export default class ForecastService {
                 .then(function (response) {
                     let result = response.data;
                     component.setState({forecastData: result});
+
+                    console.log('ForecastService -> latLonCall() \n'
+                            + '\t passedProps.city: ' + passedProps.city
+                            + '\t passedProps.lat: ' + passedProps.lat
+                            + '\t passedProps.lon: ' + passedProps.lon);
                 });
     }
 }
