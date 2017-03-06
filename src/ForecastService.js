@@ -13,6 +13,11 @@ export default class ForecastService {
     }
 
     cityCall(component, passedProps) {
+        console.log('ForecastService -> cityCall() \n'
+                + '\t passedProps.city: ' + passedProps.city
+                + '\t passedProps.lat: ' + passedProps.lat
+                + '\t passedProps.lon: ' + passedProps.lon);
+
         this.cityQuery =
                 this.beforeCityQueryPart
                 + passedProps.city
@@ -26,6 +31,11 @@ export default class ForecastService {
     }
 
     latLonCall(component, passedProps) {
+        console.log('ForecastService -> latLonCall() \n'
+                + '\t passedProps.city: ' + passedProps.city
+                + '\t passedProps.lat: ' + passedProps.lat
+                + '\t passedProps.lon: ' + passedProps.lon);
+
         this.latLonQuery =
                 this.beforeLatQueryPart
                 + passedProps.lat
