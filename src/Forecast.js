@@ -11,7 +11,11 @@ export default class Forecast extends React.Component {
         this.state = {
             forecastData: {
                 city: {
-                    name: ''
+                    name: '',
+                    coord: {
+                        lat: 50,
+                        lon:20
+                    }
                 }
             },
             openDrawer: false
@@ -52,7 +56,10 @@ export default class Forecast extends React.Component {
     }
 
     render() {
-        console.log('Forecast -> render() \n\t state.forecastData: \n\n' + JSON.stringify(this.state.forecastData, null, 4));
+        //console.log('Forecast -> render() \n\t state.forecastData: \n\n' + JSON.stringify(this.state.forecastData, null, 4));
+        console.log('Forecast -> render() \n\t state.forecastData.city.name: ' + this.state.forecastData.city.name
+                + '\t state.forecastData.city.coord.lat: ' + this.state.forecastData.city.coord.lat
+                + '\t state.forecastData.city.coord.lon: ' + this.state.forecastData.city.coord.lon);
         return (
                 <Drawer 
                     title={this.state.forecastData.city.name + ' forecast'} 
