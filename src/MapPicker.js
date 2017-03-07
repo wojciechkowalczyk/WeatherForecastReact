@@ -25,7 +25,7 @@ export default class MapPicker extends React.Component {
 
     createMap() {
         let mapOptions = {
-            zoom: 10,
+            zoom: 3,
             center: this.mapCenter()
         }
         return new google.maps.Map(this.refs.mapCanvas, mapOptions)
